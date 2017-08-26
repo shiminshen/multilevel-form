@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 import './App.css'
-import SignUpForm from './form/SignUpForm.js'
+import ExampleForm from './form/ExampleForm.js'
 import Home from './Home'
 
 
@@ -28,7 +28,7 @@ class App extends Component {
             />
             <Switch>
               <Route exact path='/' component={Home}/>
-              <Route path='/form' component={SignUpForm}/>
+              <Route path='/form' component={ExampleForm}/>
             </Switch>
           </div>
         </MuiThemeProvider>

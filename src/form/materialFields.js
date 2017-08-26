@@ -26,13 +26,15 @@ export const renderCheckbox = ({ input, label }) =>
   onCheck={input.onChange}
 />
 
-export const renderRadioGroup = ({ input, ...rest }) =>
+export const renderRadioGroup = ({ input, children, ...rest }) =>
 <RadioButtonGroup
   {...input}
   {...rest}
   valueSelected={input.value}
   onChange={(event, value) => input.onChange(value)}
-/>
+>
+  {children}
+</RadioButtonGroup>
 
 export const renderSelectField = ({
   input,
