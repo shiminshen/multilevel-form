@@ -20,7 +20,7 @@ import AppBar from 'material-ui/AppBar'
 class App extends Component {
   render() {
     return (
-      <Router basename='multilevel-form'>
+      <Router>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div className='App'>
             <AppBar
