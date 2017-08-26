@@ -1,49 +1,74 @@
 import React, { Component } from 'react';
 
-import FlatButton from 'material-ui/FlatButton';
+import { renderTextField, renderRadioGroup } from './materialFields.js'
 
-import Page1 from './Pages/Page1.js'
-import Page2 from './Pages/Page2.js'
-import Page3 from './Pages/Page3.js'
-
+import { RadioButtonGroup } from 'material-ui/RadioButton'
+import RadioButton from 'material-ui/RadioButton'
+import MultilevelForm from './MultilevelForm.js'
 import './SignUpForm.css'
+
+let formData = [
+  [
+    {
+      label: 'First Name',
+      name: 'firstName',
+      component: renderTextField,
+    },
+    {
+      label: 'Last Name',
+      name: 'lastName',
+      component: renderTextField,
+    },
+    {
+      label: 'Sex',
+      name: 'sex',
+      style: {maxWidth: 250},
+      component: ({ input, ...rest }) =>
+      <RadioButtonGroup
+        {...input}
+        {...rest}
+        valueSelected={input.value}
+        onChange={(event, value) => input.onChange(value)}
+      >
+        <RadioButton value='male' label='male'/>
+        <RadioButton value='female' label='female'/>
+      </RadioButtonGroup>
+    }
+  ],
+  [
+    {
+      label: 'Email',
+      name: 'email',
+      component: renderTextField,
+      children: null
+    },
+    {
+      label: 'Sex',
+      name: 'sex',
+      component: ({ input, ...rest }) =>
+      <RadioButtonGroup
+        {...input}
+        {...rest}
+        style={{maxWidth: 250}}
+        valueSelected={input.value}
+        onChange={(event, value) => input.onChange(value)}
+      >
+        <RadioButton value='male' label='male'/>
+        <RadioButton value='female' label='female'/>
+      </RadioButtonGroup>
+    }
+  ]
+]
 
 class SignUpForm extends Component {
 
   render() {
-    let {
-      history,
-      location: {
-        hash
-      }
-    } = this.props
-
-    let hashValue = Number(hash.substr(1)) || 1
-    let prevHashNumber = hashValue - 1
-    let nextHashNumber = hashValue + 1
 
     return (
-      <div className='signup-form'>
-        {hashValue === 1 && <Page1/>}
-        {hashValue === 2 && <Page2/>}
-        {hashValue === 3 && <Page3/>}
-        <div>
-          <FlatButton secondary={true}
-            label='Prev'
-            onClick={() => history.push({
-            pathname: '/form',
-            hash: prevHashNumber.toString()
-            })}
-          />
-          <FlatButton primary={true}
-            label='Next'
-            onClick={() => history.push({
-            pathname: '/form',
-            hash: nextHashNumber.toString()
-            })}
-          />
-        </div>
-      </div>
+      <MultilevelForm 
+        className='signup-form' 
+        formData={formData}
+      />
       );
   }
 }
