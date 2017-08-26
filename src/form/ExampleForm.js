@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import { renderTextField, renderRadioGroup } from './materialFields.js'
+import { renderTextField } from './materialFields.js'
 
 import { RadioButtonGroup } from 'material-ui/RadioButton'
 import RadioButton from 'material-ui/RadioButton'
-import MultilevelForm from './MultilevelForm.js'
+
+import MultipleStepForm from '../MultiStepForm'
 import './ExampleForm.css'
 
 let formData = [
@@ -65,7 +66,7 @@ class SignUpForm extends Component {
   render() {
 
     return (
-      <MultilevelForm 
+      <MultipleStepForm 
         className='example-form' 
         formData={formData}
       />
