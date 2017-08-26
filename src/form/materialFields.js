@@ -19,12 +19,12 @@ export const renderTextField = ({
   {...custom}
 />
 
-  export const renderCheckbox = ({ input, label }) =>
-  <Checkbox
-    label={label}
-    checked={input.value ? true : false}
-    onCheck={input.onChange}
-  />
+export const renderCheckbox = ({ input, label }) =>
+<Checkbox
+  label={label}
+  checked={input.value ? true : false}
+  onCheck={input.onChange}
+/>
 
 export const renderRadioGroup = ({ input, ...rest }) =>
 <RadioButtonGroup
@@ -34,18 +34,18 @@ export const renderRadioGroup = ({ input, ...rest }) =>
   onChange={(event, value) => input.onChange(value)}
 />
 
-  export const renderSelectField = ({
-    input,
-    label,
-    meta: { touched, error },
-    children,
-    ...custom
-  }) =>
-  <SelectField
-    floatingLabelText={label}
-    errorText={touched && error}
-    {...input}
-    onChange={(event, index, value) => input.onChange(value)}
-    children={children}
-    {...custom}
-  />
+export const renderSelectField = ({
+  input,
+  label,
+  meta: { touched, error },
+  children,
+  ...custom
+}) =>
+<SelectField
+  floatingLabelText={label}
+  errorText={touched && error}
+  {...input}
+  onChange={(event, index, value) => input.onChange(value)}
+  children={children}
+  {...custom}
+/>
