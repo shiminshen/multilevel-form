@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Link
@@ -20,7 +20,7 @@ import AppBar from 'material-ui/AppBar'
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename='multilevel-form'>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div className='App'>
             <AppBar
