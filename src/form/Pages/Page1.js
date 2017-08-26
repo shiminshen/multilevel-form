@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
+import { renderTextField} from '../materialFields.js'
 
 class Page1 extends Component {
 
@@ -7,11 +8,11 @@ class Page1 extends Component {
   render() {
     return (
       <form>
-        <label htmlFor='input1'>Input1</label>
         <Field
           name='input1'
           id='input1'
-          component='input'
+          label='Input1'
+          component={renderTextField}
         />
       </form>
     );
