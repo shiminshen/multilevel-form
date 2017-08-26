@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import {
-  Link
-} from 'react-router-dom'
+
+import FlatButton from 'material-ui/FlatButton'
 
 class Home extends Component {
 
   
   render() {
+
+    let {
+      history
+    } = this.props
+
     return (
-      <div>
-        <Link to='/form'>Show form</Link>
-      </div>
+      <FlatButton
+        label='Show form'
+        onClick={() => history.push('/form')}
+      />
     );
   }
 }
