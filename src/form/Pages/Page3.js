@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
+import { renderTextField} from '../materialFields.js'
 
 class Page3 extends Component {
 
   render() {
     return (
       <form>
-        <label htmlFor='input3'>Input3</label>
         <Field
           name='input3'
           id='input3'
-          component='input'
+          label='input3'
+          component={renderTextField}
         />
       </form>
     );
