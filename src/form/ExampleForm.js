@@ -5,7 +5,7 @@ import { renderTextField, renderRadioGroup } from './materialFields.js'
 import { RadioButtonGroup } from 'material-ui/RadioButton'
 import RadioButton from 'material-ui/RadioButton'
 import MultilevelForm from './MultilevelForm.js'
-import './SignUpForm.css'
+import './ExampleForm.css'
 
 let formData = [
   [
@@ -66,7 +66,7 @@ class SignUpForm extends Component {
 
     return (
       <MultilevelForm 
-        className='signup-form' 
+        className='example-form' 
         formData={formData}
       />
       );
