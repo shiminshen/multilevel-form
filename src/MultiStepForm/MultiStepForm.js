@@ -23,7 +23,7 @@ class MultilevelForm extends Component {
     let hashValue = Number(hash.substr(1)) || 1
     let dataIdx = hashValue - 1;
 
-    let prevHashNumber = hashValue < 1 ? hashValue - 1 : 1
+    let prevHashNumber = hashValue < 1 ? 1 : hashValue - 1
     let nextHashNumber = hashValue > formData.length - 1 ? formData.length : hashValue + 1 
 
     return (

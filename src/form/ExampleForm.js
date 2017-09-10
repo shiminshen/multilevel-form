@@ -38,12 +38,6 @@ let formData = [
   ],
   [
     {
-      label: 'Email',
-      name: 'email',
-      component: renderTextField,
-      children: null
-    },
-    {
       label: 'Sex',
       name: 'sex',
       component: ({ input, ...rest }) =>
@@ -57,6 +51,12 @@ let formData = [
         <RadioButton value='male' label='male'/>
         <RadioButton value='female' label='female'/>
       </RadioButtonGroup>
+    }
+  ], [
+    {
+      label: 'Email',
+      name: 'email',
+      component: renderTextField,
     }
   ]
 ]
