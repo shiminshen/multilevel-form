@@ -6,6 +6,7 @@ import { RadioButtonGroup } from 'material-ui/RadioButton'
 import RadioButton from 'material-ui/RadioButton'
 
 import MultipleStepForm from '../MultiStepForm'
+import ValuesMonitor from '../ValuesMonitor'
 import './ExampleForm.css'
 
 let formData = [
@@ -14,26 +15,10 @@ let formData = [
       label: 'First Name',
       name: 'firstName',
       component: renderTextField,
-    },
-    {
+    }, {
       label: 'Last Name',
       name: 'lastName',
       component: renderTextField,
-    },
-    {
-      label: 'Sex',
-      name: 'sex',
-      style: {maxWidth: 250},
-      component: ({ input, ...rest }) =>
-      <RadioButtonGroup
-        {...input}
-        {...rest}
-        valueSelected={input.value}
-        onChange={(event, value) => input.onChange(value)}
-      >
-        <RadioButton value='male' label='male'/>
-        <RadioButton value='female' label='female'/>
-      </RadioButtonGroup>
     }
   ],
   [
@@ -66,10 +51,13 @@ class SignUpForm extends Component {
   render() {
 
     return (
-      <MultipleStepForm 
-        className='example-form' 
-        formData={formData}
-      />
+      <div>
+        <MultipleStepForm 
+          className='example-form' 
+          formData={formData}
+        />
+        <ValuesMonitor/>
+      </div>
       );
   }
 }
