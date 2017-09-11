@@ -7,8 +7,7 @@ import SingleStepForm from './SingleStepForm.js'
 import './MultiStepForm.css'
 
 
-class MultilevelForm extends Component {
-
+class MultiStepForm extends Component {
 
   render() {
 
@@ -56,4 +55,4 @@ class MultilevelForm extends Component {
   }
 }
 
-export default withRouter(MultilevelForm);
+export default withRouter(MultiStepForm);

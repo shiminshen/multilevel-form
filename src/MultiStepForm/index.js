@@ -1,5 +1,5 @@
-import MultilevelForm from './MultiStepForm.js'
+import MultiStepForm from './MultiStepForm.js'
 
 export * from './MultiStepForm.js'
 export * from './SingleStepForm.js'
-export default MultilevelForm
+export default MultiStepForm
