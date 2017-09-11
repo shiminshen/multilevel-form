@@ -24,7 +24,7 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div className='App'>
             <AppBar
-              title={<Link to='/'>Multilevel Form</Link>}
+              title={<Link to='/'>Multistep Form</Link>}
             />
             <Switch>
               <Route exact path='/' component={Home}/>
