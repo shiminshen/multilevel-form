@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import FlatButton from 'material-ui/FlatButton';
 import { withRouter } from 'react-router'
-
 import SingleStepForm from './SingleStepForm.js'
+
+import './MultiStepForm.css'
+
 
 class MultilevelForm extends Component {
 
@@ -33,7 +35,7 @@ class MultilevelForm extends Component {
           style={style}
           formData={formData[dataIdx]}
         >
-          <div>
+          <div className='multistep-navigation-btn'>
             <FlatButton secondary={true}
               label='Prev'
               onClick={() => history.push({
