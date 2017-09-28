@@ -5,4 +5,4 @@ An example of multistep form which create by [redux-form](https://github.com/eri
 
 development
 
-  npm start
+    npm start

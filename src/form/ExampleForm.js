@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import { renderTextField } from './materialFields.js'
 
-import { RadioButtonGroup } from 'material-ui/RadioButton'
-import RadioButton from 'material-ui/RadioButton'
+import RadioButton, { RadioButtonGroup } from 'material-ui/RadioButton'
 
 import MultipleStepForm from '../MultiStepForm'
 import ValuesMonitor from '../ValuesMonitor'
@@ -14,11 +13,11 @@ let formData = [
     {
       label: 'First Name',
       name: 'firstName',
-      component: renderTextField,
+      component: renderTextField
     }, {
       label: 'Last Name',
       name: 'lastName',
-      component: renderTextField,
+      component: renderTextField
     }
   ],
   [
@@ -26,40 +25,38 @@ let formData = [
       label: 'Sex',
       name: 'sex',
       component: ({ input, ...rest }) =>
-      <RadioButtonGroup
-        {...input}
-        {...rest}
-        style={{maxWidth: 250}}
-        valueSelected={input.value}
-        onChange={(event, value) => input.onChange(value)}
+        <RadioButtonGroup
+          {...input}
+          {...rest}
+          style={{maxWidth: 250}}
+          valueSelected={input.value}
+          onChange={(event, value) => input.onChange(value)}
       >
-        <RadioButton value='male' label='male'/>
-        <RadioButton value='female' label='female'/>
-      </RadioButtonGroup>
+          <RadioButton value='male' label='male' />
+          <RadioButton value='female' label='female' />
+        </RadioButtonGroup>
     }
   ], [
     {
       label: 'Email',
       name: 'email',
-      component: renderTextField,
+      component: renderTextField
     }
   ]
 ]
 
 class SignUpForm extends Component {
-
-  render() {
-
+  render () {
     return (
       <div>
-        <MultipleStepForm 
-          className='example-form' 
+        <MultipleStepForm
+          className='example-form'
           formData={formData}
         />
-        <ValuesMonitor/>
+        <ValuesMonitor />
       </div>
-      );
+    )
   }
 }
 
-export default SignUpForm;
+export default SignUpForm
